@@ -33,7 +33,9 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         echo "Assets/Voiceer.meta" > metaList
-        ls -r Assets/Voiceer/ | where { $_.Name -match "*.meta" } >> metaList
+        echo 'Assets/Voiceer/VoiceResources.meta' >> metaList
+        echo 'Assets/Voiceer/VoiceResources/MusubimeYuiVoices.meta' >> metaList
+        echo 'Assets/Voiceer/VoiceResources/MusubimeYuiVoices/MusubimeYui.asset.meta' >> metaList
 
     - uses: pCYSl5EDgo/create-unitypackage@master
       with:
